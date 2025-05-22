@@ -346,6 +346,135 @@
                             </button>
                         </div>
                     </form>
+                    
+                    <!-- Script de processamento do formulário -->
+                    <script>
+                      document.addEventListener('DOMContentLoaded', function() {
+                        const form = document.getElementById('contato-form');
+
+                        form.addEventListener('submit', function(e) {
+                          e.preventDefault();
+                          
+                          // Obter o texto completo da opção selecionada no campo tratamento
+                          const tratamentoSelect = document.getElementById('tratamento');
+                          const tratamentoTexto = tratamentoSelect.options[tratamentoSelect.selectedIndex].text;
+                          
+                          // Adicionar descrições detalhadas baseadas na opção selecionada
+                          let descricaoTratamento = '';
+                          switch(tratamentoSelect.value) {
+                            case 'facial':
+                              descricaoTratamento = 'Tratamentos que combatem sinais de envelhecimento, melhoram a textura da pele e promovem um aspecto mais jovem e saudável.';
+                              break;
+                            case 'corpo':
+                              descricaoTratamento = 'Procedimentos para modelagem corporal, redução de medidas e melhora da firmeza e elasticidade da pele.';
+                              break;
+                            case 'botox':
+                              descricaoTratamento = 'Aplicação de toxina botulínica e/ou ácido hialurônico para suavizar linhas de expressão e dar volume em áreas específicas.';
+                              break;
+                            case 'emagrecimento':
+                              descricaoTratamento = 'Protocolos personalizados que combinam tecnologias e técnicas para auxiliar na perda de peso e definição corporal.';
+                              break;
+                            case 'outro':
+                              descricaoTratamento = 'Tratamento personalizado a ser discutido durante a avaliação.';
+                              break;
+                            default:
+                              descricaoTratamento = '';
+                          }
+                          
+                          const formData = {
+                            nome: document.getElementById('nome').value,
+                            telefone: document.getElementById('telefone').value,
+                            email: document.getElementById('email').value,
+                            tratamento: tratamentoTexto,
+                            descricaoTratamento: descricaoTratamento,
+                            mensagem: document.getElementById('mensagem').value,
+                            dataHora: new Date().toLocaleString('pt-BR')
+                          };
+
+                          // Botão de envio com estado de carregamento
+                          const submitBtn = form.querySelector('.form-submit-btn');
+                          const originalText = submitBtn.innerHTML;
+                          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                          submitBtn.disabled = true;
+
+                          fetch('https://script.google.com/macros/s/AKfycbzUQcjNu1UzapTqTb7ccFS3DDCT-hVOXHmcaoMXRrIKRD9FpAJVZA566pfQ6pPnDfZA/exec', {
+                            method: 'POST',
+                            mode: 'no-cors',  // impede bloqueios de CORS
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(formData)
+                          }).then(() => {
+                            // Exibir mensagem de sucesso estilizada
+                            const successMessage = document.createElement('div');
+                            successMessage.className = 'form-success-message';
+                            successMessage.innerHTML = `
+                              <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                              </div>
+                              <h3>Mensagem enviada com sucesso!</h3>
+                              <p>Agradecemos seu contato. Nossa equipe retornará em breve.</p>
+                            `;
+                            
+                            // Substituir o formulário pela mensagem de sucesso
+                            form.style.opacity = '0';
+                            setTimeout(() => {
+                              form.style.display = 'none';
+                              form.parentNode.appendChild(successMessage);
+                              setTimeout(() => {
+                                successMessage.style.opacity = '1';
+                              }, 50);
+                            }, 300);
+                            
+                            // Resetar formulário (mesmo que esteja escondido)
+                            form.reset();
+                          }).catch(() => {
+                            // Restaurar o botão e mostrar mensagem de erro
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            
+                            alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente.');
+                          });
+                        });
+                      });
+                    </script>
+                    
+                    <style>
+                      /* Estilos para a mensagem de sucesso */
+                      .form-success-message {
+                        background-color: #fff;
+                        border-radius: 10px;
+                        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                        padding: 40px 30px;
+                        text-align: center;
+                        max-width: 500px;
+                        margin: 0 auto;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                      }
+                      
+                      .success-icon {
+                        font-size: 60px;
+                        color: #8D6E63;
+                        margin-bottom: 20px;
+                      }
+                      
+                      .form-success-message h3 {
+                        color: #8D6E63;
+                        font-family: 'Playfair Display', serif;
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                      }
+                      
+                      .form-success-message p {
+                        color: #666;
+                        font-size: 16px;
+                        line-height: 1.5;
+                      }
+                      
+                      .form-submit-btn:disabled {
+                        opacity: 0.7;
+                        cursor: not-allowed;
+                      }
+                    </style>
                 </div>
             </div>
         </div>
