@@ -1,0 +1,228 @@
+/* Footer Styles for Medinova */
+.footer {
+    background-color: #F4EDE4;
+    padding: 60px 0 30px;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.8s ease-in-out;
+    border-top: 1px solid #D9C7B6;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+/* Brand/Logo Section */
+.footer-brand {
+    flex: 1.5;
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.footer-logo-img {
+    max-width: 160px;
+    height: auto;
+}
+
+.footer-tagline {
+    font-family: 'Playfair Display', serif;
+    color: #8D6E63;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* Navigation Section */
+.footer-title {
+    font-family: 'Playfair Display', serif;
+    color: #333333;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 1px;
+    background-color: #D9C7B6;
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-list li {
+    margin-bottom: 12px;
+}
+
+.footer-link {
+    color: #666666;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    transition: all 0.2s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-link:hover {
+    color: #D9C7B6;
+}
+
+.footer-link:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #D9C7B6;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+/* Contact Section */
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.footer-contact-item i {
+    color: #8D6E63;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+/* Social Media Section */
+.footer-social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #D9C7B6;
+    color: #8D6E63;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social-icon:hover {
+    transform: scale(1.05);
+    background-color: #F4EDE4;
+    border-color: #8D6E63;
+}
+
+/* Divider */
+.footer-divider {
+    height: 1px;
+    background-color: #D9C7B6;
+    margin-bottom: 20px;
+}
+
+/* Copyright */
+.footer-copyright {
+    text-align: center;
+}
+
+.footer-copyright p {
+    color: #999999;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .footer-content {
+        flex-wrap: wrap;
+    }
+    
+    .footer-column {
+        flex: 0 0 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-column {
+        flex: 0 0 100%;
+    }
+    
+    .footer-brand {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .footer-title {
+        text-align: center;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-nav-list li {
+        text-align: center;
+    }
+    
+    .footer-contact-item {
+        justify-content: center;
+    }
+    
+    .footer-social-icons {
+        justify-content: center;
+    }
+}

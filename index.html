@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medinova - Beleza, Saúde e Bem-Estar com Excelência</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="flip-cards.css">
+    <link rel="stylesheet" href="comparison-slider.css">
+    <link rel="stylesheet" href="depoimentos.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="map-placeholder.css">
+    <link rel="stylesheet" href="contato-form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="inicio">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo1_11zon.png" alt="Medinova" class="logo-img">
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#tratamentos" class="nav-link">Tratamentos</a></li>
+                    <li class="nav-item"><a href="#antes-depois" class="nav-link">Antes e Depois</a></li>
+                    <li class="nav-item"><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Menu Mobile Hamburger Button -->
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-parallax-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Desperte a Beleza que Existe em Você!</h1>
+                <p class="hero-subtitle">Na Medinova, cada tratamento é uma jornada de transformação para revelar sua versão mais radiante.</p>
+                <button id="whatsapp-button" class="cta-button">Agende sua Avaliação</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="sobre-wrapper">
+                <div class="sobre-content">
+                    <h2 class="section-title">Sobre a Medinova</h2>
+                    <p class="sobre-texto">Na Medinova, acreditamos que estética é saúde e bem-estar. Oferecemos tratamentos personalizados, com tecnologia de ponta e uma equipe altamente qualificada, para proporcionar experiências únicas e resultados naturais.</p>
+                    
+                    <div class="destaques-container">
+                        <div class="destaque-item">
+                            <div class="destaque-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="destaque-title">Atendimento humanizado</h3>
+                            <p class="destaque-text">Cuidamos de você como um todo, respeitando sua individualidade e necessidades específicas.</p>
+                        </div>
+                        
+                        <div class="destaque-item">
+                            <div class="destaque-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h3 class="destaque-title">Equipamentos de última geração</h3>
+                            <p class="destaque-text">Investimos constantemente nas tecnologias mais avançadas para garantir resultados eficazes e seguros.</p>
+                        </div>
+                        
+                        <div class="destaque-item">
+                            <div class="destaque-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3 class="destaque-title">Profissionais certificados</h3>
+                            <p class="destaque-text">Nossa equipe é formada por especialistas com formação sólida e constante atualização.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sobre-imagem">
+                    <div class="imagem-container">
+                        <img src="img/clinica1sobre.png" alt="Clínica Medinova" class="rounded-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="tratamentos" class="tratamentos">
+        <div class="container">
+            <div class="tratamentos-header">
+                <h2 class="section-title">Tratamentos Oferecidos</h2>
+                <p class="section-subtitle">Tecnologia e cuidado para realçar sua beleza.</p>
+            </div>
+            
+            <div class="tratamentos-grid">
+                <!-- Card 1 -->
+                <div class="tratamento-card">
+                    <div class="tratamento-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="tratamento-title">Limpeza de Pele Profunda</h3>
+                    <p class="tratamento-desc">Para revitalizar e purificar a sua pele.</p>
+                    <button class="tratamento-btn">Saiba Mais</button>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="tratamento-card">
+                    <div class="tratamento-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="tratamento-title">Botox e Preenchimento Facial</h3>
+                    <p class="tratamento-desc">Realce sua beleza com naturalidade e segurança.</p>
+                    <button class="tratamento-btn">Saiba Mais</button>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="tratamento-card">
+                    <div class="tratamento-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="tratamento-title">Depilação a Laser</h3>
+                    <p class="tratamento-desc">Tecnologia avançada para resultados duradouros.</p>
+                    <button class="tratamento-btn">Saiba Mais</button>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="tratamento-card">
+                    <div class="tratamento-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="tratamento-title">Tratamentos Corporais</h3>
+                    <p class="tratamento-desc">Criolipólise e outras técnicas para contorno corporal.</p>
+                    <button class="tratamento-btn">Saiba Mais</button>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="tratamento-card">
+                    <div class="tratamento-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="tratamento-title">Peeling Químico</h3>
+                    <p class="tratamento-desc">Renovação celular para uma pele mais jovem.</p>
+                    <button class="tratamento-btn">Saiba Mais</button>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="tratamento-card">
+                    <div class="tratamento-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3 class="tratamento-title">Terapias Relaxantes</h3>
+                    <p class="tratamento-desc">Massagens e cuidados para o seu bem-estar.</p>
+                    <button class="tratamento-btn">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Antes e Depois (Cards Interativos) -->
+    <section id="antes-depois" class="antes-depois-section">
+        <div class="container">
+            <h2 class="section-title">Antes e Depois</h2>
+            <p class="section-subtitle">Transformações naturais com a excelência da Medinova.</p>
+            
+            <div class="card-grid">
+                <!-- Card 1: Rejuvenescimento Facial -->
+                <div class="flip-card" aria-label="Antes do tratamento. Clique para ver depois.">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/antes1.jpg" alt="Antes do rejuvenescimento facial">
+                            <div class="card-caption">
+                                <h3>Rejuvenescimento Facial</h3>
+                                <span class="card-status">Antes</span>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="img/depois1.jpg" alt="Depois do rejuvenescimento facial">
+                            <div class="card-caption">
+                                <h3>Rejuvenescimento Facial</h3>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Preenchimento Labial -->
+                <div class="flip-card" aria-label="Antes do tratamento. Clique para ver depois.">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/antes2.jpg" alt="Antes do preenchimento labial">
+                            <div class="card-caption">
+                                <h3>Preenchimento Labial</h3>
+                                <span class="card-status">Antes</span>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="img/depois2.jpg" alt="Depois do preenchimento labial">
+                            <div class="card-caption">
+                                <h3>Preenchimento Labial</h3>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Criolipólise Abdominal -->
+                <div class="flip-card" aria-label="Antes do tratamento. Clique para ver depois.">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/antes3.jpg" alt="Antes da criolipólise abdominal">
+                            <div class="card-caption">
+                                <h3>Criolipólise Abdominal</h3>
+                                <span class="card-status">Antes</span>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="img/depois3.jpg" alt="Depois da criolipólise abdominal">
+                            <div class="card-caption">
+                                <h3>Criolipólise Abdominal</h3>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="subtle-note">Interaja com nossos resultados: cada card revela a excelência dos nossos tratamentos estéticos.</p>
+        </div>
+    </section>
+    
+    <!-- Seção de Depoimentos -->
+    <section id="depoimentos" class="depoimentos-section">
+        <div class="container">
+            <h2 class="depoimentos-title">Histórias de Transformação e Confiança</h2>
+            <p class="depoimentos-subtitle">Mulheres reais compartilham como a Medinova as ajudou a redescobrir sua beleza autêntica.</p>
+            
+            <div class="depoimentos-grid">
+                <!-- Depoimento 1 -->
+                <div class="depoimento-card" data-delay="0">
+                    <span class="depoimento-quote">“</span>
+                    <p class="depoimento-texto">A Medinova transformou minha autoestima. Os resultados do tratamento de rejuvenescimento facial superaram todas as minhas expectativas.</p>
+                    <div class="depoimento-autor">
+                        <span class="depoimento-nome">Ana Paula Silva</span>
+                        <div class="depoimento-separador"></div>
+                        <span class="depoimento-info">Rejuvenescimento Facial</span>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="depoimento-card" data-delay="1">
+                    <span class="depoimento-quote">“</span>
+                    <p class="depoimento-texto">Profissionalismo impecável desde a primeira consulta. O protocolo de tratamento foi personalizado e os resultados são naturais e duradouros.</p>
+                    <div class="depoimento-autor">
+                        <span class="depoimento-nome">Roberto Mendes</span>
+                        <div class="depoimento-separador"></div>
+                        <span class="depoimento-info">Tratamento Capilar</span>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="depoimento-card" data-delay="2">
+                    <span class="depoimento-quote">“</span>
+                    <p class="depoimento-texto">A clínica possui uma infraestrutura de primeira linha e uma equipe que realmente se importa. Recomendo sem hesitação.</p>
+                    <div class="depoimento-autor">
+                        <span class="depoimento-nome">Cristina Almeida</span>
+                        <div class="depoimento-separador"></div>
+                        <span class="depoimento-info">Criolipólise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção de Contato -->
+    <section id="contato" class="contato-section">
+        <div class="contato-bg-parallax"></div>
+        <div class="contato-overlay"></div>
+        <div class="container">
+            <div class="contato-content">
+                <h2 class="section-title contato-title">Entre em Contato</h2>
+                <p class="section-subtitle contato-subtitle">Estamos à disposição para tirar suas dúvidas e agendar seu atendimento.</p>
+                
+                <div class="form-container">
+                    <form id="contato-form" class="contato-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tratamento">Tratamento de interesse</label>
+                                <select id="tratamento" name="tratamento" required>
+                                    <option value="" disabled selected>Selecione um tratamento</option>
+                                    <option value="facial">Rejuvenescimento Facial</option>
+                                    <option value="corpo">Tratamentos Corporais</option>
+                                    <option value="botox">Botox e Preenchedores</option>
+                                    <option value="emagrecimento">Emagrecimento</option>
+                                    <option value="outro">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos mais sobre o que você procura..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width consent-group">
+                            <div class="checkbox-wrapper">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                    <span class="checkmark"></span>
+                                    <span class="consent-text">Concordo em receber comunicações da Medinova e confirmo que li a <a href="#">Política de Privacidade</a>.</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <button type="submit" class="form-submit-btn">
+                                <i class="fas fa-paper-plane"></i> Enviar mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Mobile Off-Canvas -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-container">
+            <div class="mobile-tagline">
+                <div class="mobile-tagline-text">
+                    <span>Transformando beleza em confiança!</span>
+                </div>
+            </div>
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="#inicio" class="mobile-nav-link">Início</a></li>
+                <li class="mobile-nav-item"><a href="#sobre" class="mobile-nav-link">Sobre</a></li>
+                <li class="mobile-nav-item"><a href="#tratamentos" class="mobile-nav-link">Tratamentos</a></li>
+                <li class="mobile-nav-item"><a href="#depoimentos" class="mobile-nav-link">Depoimentos</a></li>
+                <li class="mobile-nav-item"><a href="#antes-depois" class="mobile-nav-link">Antes e Depois</a></li>
+                <li class="mobile-nav-item"><a href="#contato" class="mobile-nav-link">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo/Name Column -->
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo">
+                        <img src="img/logo1_11zon.png" alt="Medinova" class="footer-logo-img">
+                    </div>
+                    <p class="footer-tagline">Beleza, Saúde e Bem-Estar com Excelência</p>
+                </div>
+
+                <!-- Navigation Column -->
+                <div class="footer-column footer-nav">
+                    <h3 class="footer-title">Navegação</h3>
+                    <ul class="footer-nav-list">
+                        <li><a href="#inicio" class="footer-link">Início</a></li>
+                        <li><a href="#sobre" class="footer-link">Sobre</a></li>
+                        <li><a href="#tratamentos" class="footer-link">Tratamentos</a></li>
+                        <li><a href="#antes-depois" class="footer-link">Antes e Depois</a></li>
+                        <li><a href="#depoimentos" class="footer-link">Depoimentos</a></li>
+                        <li><a href="#contato" class="footer-link">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="footer-column footer-contact">
+                    <h3 class="footer-title">Contato</h3>
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Paulista, 1000 - Bela Vista, São Paulo</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(11) 98765-4321</span>
+                        </li>
+                        <li class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@medinova.com.br</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Column -->
+                <div class="footer-column footer-social">
+                    <h3 class="footer-title">Redes Sociais</h3>
+                    <div class="footer-social-icons">
+                        <a href="#" class="footer-social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="footer-social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer-social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="footer-social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="footer-divider"></div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                <p>&copy; 2025 Medinova. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="comparison-slider.js"></script>
+    <script src="flip-cards.js"></script>
+    <script src="depoimentos.js"></script>
+    <script src="map-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+/* Estilos consistentes para fundos de seções - Medinova */
+
+/* Padrão geral para todas as seções */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero Section - Já está bem estilizada no arquivo principal */
+
+/* Seção Sobre */
+.sobre {
+    background-color: var(--white);
+}
+
+.sobre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--off-white) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+/* Seção Tratamentos */
+.tratamentos {
+    background-color: var(--off-white);
+    position: relative;
+}
+
+.tratamentos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, var(--primary) 25%, transparent 25%, transparent 75%, var(--primary) 75%),
+                      linear-gradient(45deg, var(--primary) 25%, transparent 25%, transparent 75%, var(--primary) 75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.04;
+    z-index: 0;
+}
+
+/* Seção Antes e Depois - Já ajustada no flip-cards.css */
+
+/* Seção Depoimentos */
+.depoimentos {
+    background-color: var(--off-white);
+    position: relative;
+}
+
+.depoimentos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/pattern-bg.png');
+    background-size: 200px;
+    background-repeat: repeat;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+/* Seção de Contato - Manter o estilo de parallax existente */
+.contato-section {
+    position: relative;
+    padding: 100px 0;
+    color: var(--white);
+}
+
+.contato-overlay {
+    background: linear-gradient(to right, rgba(94, 139, 126, 0.9), rgba(141, 110, 99, 0.85));
+}
+
+/* Elementos de transição entre seções */
+.section-divider {
+    height: 100px;
+    position: relative;
+    margin-top: -50px;
+    z-index: 10;
+}
+
+.divider-curve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    clip-path: ellipse(50% 50% at 50% 0%);
+}
+
+/* Efeito parallax suave ao rolar */
+.parallax-bg {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}

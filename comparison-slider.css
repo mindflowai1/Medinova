@@ -1,0 +1,218 @@
+/* Estilos para a seção Antes e Depois com controle range */
+
+.antes-depois-section {
+    padding: 100px 0;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.antes-depois-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.antes-depois-item {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.antes-depois-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.antes-depois-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.antes-depois-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #333333;
+    padding: 25px 25px 15px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.antes-depois-caption {
+    padding: 15px 25px 25px;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Slider com controle range */
+.before-after-fade-slider {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para as imagens */
+.before-after-fade-slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.after-image {
+    transition: opacity 0.2s ease-out;
+    opacity: 0; /* Inicialmente invisível */
+    pointer-events: none;
+}
+
+/* Controle range */
+.slider-control {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 6px;
+    border-radius: 3px;
+    background: #D9C7B6;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Estilo para o polegar do slider (Chrome, Safari, Opera) */
+.slider-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #8D6E63;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Estilo para o polegar do slider (Firefox) */
+.slider-control::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #8D6E63;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Efeito hover no controle */
+.slider-control:hover::-webkit-slider-thumb {
+    background: #D9C7B6;
+    transform: scale(1.1);
+}
+
+.slider-control:hover::-moz-range-thumb {
+    background: #D9C7B6;
+    transform: scale(1.1);
+}
+
+/* Overlay para exibir a porcentagem */
+.fade-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(141, 110, 99, 0.85);
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Labels de Antes e Depois */
+.label-before,
+.label-after {
+    position: absolute;
+    bottom: 15px;
+    padding: 6px 15px;
+    background-color: rgba(141, 110, 99, 0.85);
+    color: #FFFFFF;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    z-index: 3;
+}
+
+.label-before {
+    left: 15px;
+}
+
+.label-after {
+    right: 15px;
+    opacity: 0; /* Inicialmente invisível, aparecerá gradualmente com o slider */
+    transition: opacity 0.2s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .antes-depois-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .before-after-fade-slider {
+        height: 300px;
+    }
+    
+    .antes-depois-title {
+        font-size: 1.1rem;
+        padding: 20px 20px 10px;
+    }
+    
+    .antes-depois-caption {
+        padding: 10px 20px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .slider-control {
+        width: 85%;
+        bottom: 50px;
+    }
+    
+    .fade-overlay {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .before-after-fade-slider {
+        height: 250px;
+    }
+    
+    .slider-control {
+        bottom: 40px;
+        width: 90%;
+    }
+}

@@ -1,0 +1,288 @@
+/* Estilos do Formulário de Contato Medinova */
+.form-container {
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(141, 110, 99, 0.15);
+    border: 1px solid rgba(217, 199, 182, 0.3);
+    animation: fadeInUp 0.8s ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-group {
+    flex: 1;
+    position: relative;
+}
+
+.full-width {
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary);
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(141, 110, 99, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #333333;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(217, 199, 182, 0.2);
+}
+
+input::placeholder, select::placeholder, textarea::placeholder {
+    color: #999999;
+    font-weight: 300;
+}
+
+/* Estilização específica para o select */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238D6E63' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+/* Estilização para o textarea */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Checkbox personalizado */
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    color: #666666;
+    margin: 0 auto;
+    max-width: 500px;
+    justify-content: center;
+    text-align: center;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(141, 110, 99, 0.2);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #f1f1f1;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.consent-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.consent-text a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.consent-text a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.consent-group {
+    margin-top: 10px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Botão de envio */
+.form-submit-btn {
+    padding: 16px 34px;
+    background-color: var(--accent); /* Verde */
+    color: var(--white); /* Texto branco */
+    border: none;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 6px 15px rgba(94, 139, 126, 0.3); /* Sombra verde */
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px;
+    align-self: center;
+}
+
+.form-submit-btn i {
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.form-submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #7A5A53; /* Tom de marrom médio, mais escuro que o bege */
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.form-submit-btn:hover {
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(141, 110, 99, 0.3); /* Sombra marrom combinando com o hover */
+    background-color: var(--accent); /* Mantém a cor verde no hover */
+}
+
+.form-submit-btn:hover::before {
+    width: 100%;
+}
+
+.form-submit-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 15px rgba(141, 110, 99, 0.2);
+    background-color: var(--accent);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    input, select, textarea {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+    
+    .form-submit-btn {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Animações simplificadas do formulário para melhor performance */
+.form-group {
+    opacity: 1; /* Removidas as animações individuais */
+    transform: none;
+}
+
+/* Apenas uma animação simples para o container do formulário */
+.form-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
