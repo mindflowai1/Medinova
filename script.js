@@ -6,14 +6,151 @@ let scrollTimer;
 const header = document.querySelector('.header');
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 
-// Configuração do botão de WhatsApp
+// Configuração do popup do chatbot - desativado para evitar conflito
+// O popup agora é gerenciado diretamente no index.html
 document.addEventListener('DOMContentLoaded', function() {
-    const whatsappButton = document.getElementById('whatsapp-button');
+    // O comportamento do botão whatsappButton foi movido para o index.html
     
-    if (whatsappButton) {
-        whatsappButton.addEventListener('click', function() {
-            const whatsappURL = 'https://wa.me/5531999999999?text=Olá! Gostaria de agendar uma avaliação na Medinova.';
-            window.open(whatsappURL, '_blank');
+    // Função para abrir o popup do chatbot
+    function openChatbotPopup() {
+        // Verificar se o popup já existe para evitar duplicação
+        if (document.getElementById('chatbot-popup')) {
+            document.getElementById('chatbot-popup').style.display = 'flex';
+            return;
+        }
+        
+        // Criar o container do popup
+        const popupContainer = document.createElement('div');
+        popupContainer.id = 'chatbot-popup';
+        popupContainer.className = 'chatbot-popup';
+        
+        // Criar o conteúdo do popup
+        popupContainer.innerHTML = `
+            <div class="chatbot-popup-content">
+                <div class="chatbot-popup-header">
+                    <h3>Assistente Virtual Medinova</h3>
+                    <button id="close-popup" aria-label="Fechar popup">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="chatbot-popup-body">
+                    <iframe src="https://n8n-n8n-start.kof6cn.easypanel.host/webhook/97577522-1b6f-4c92-861f-a02391ffd13b/chat" frameborder="0"></iframe>
+                </div>
+            </div>
+        `;
+        
+        // Adicionar o popup ao body
+        document.body.appendChild(popupContainer);
+        
+        // Adicionar o CSS para o popup
+        const style = document.createElement('style');
+        style.textContent = `
+            .chatbot-popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                backdrop-filter: blur(5px);
+                animation: fadeIn 0.3s ease-out;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            .chatbot-popup-content {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                width: 90%;
+                max-width: 400px;
+                height: 600px;
+                max-height: 80vh;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                animation: scaleIn 0.3s ease-out;
+            }
+            
+            @keyframes scaleIn {
+                from { transform: scale(0.9); }
+                to { transform: scale(1); }
+            }
+            
+            .chatbot-popup-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px;
+                background-color: #D9C7B6;
+                color: #8D6E63;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .chatbot-popup-header h3 {
+                margin: 0;
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+            }
+            
+            #close-popup {
+                background: none;
+                border: none;
+                color: #8D6E63;
+                font-size: 18px;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: background-color 0.2s;
+            }
+            
+            #close-popup:hover {
+                background-color: rgba(141, 110, 99, 0.1);
+            }
+            
+            .chatbot-popup-body {
+                flex: 1;
+                padding: 0;
+                overflow: hidden;
+            }
+            
+            .chatbot-popup-body iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+            
+            @media (max-width: 600px) {
+                .chatbot-popup-content {
+                    width: 95%;
+                    height: 70vh;
+                }
+            }
+        `;
+        
+        document.head.appendChild(style);
+        
+        // Configurar o botão de fechar
+        document.getElementById('close-popup').addEventListener('click', function() {
+            document.getElementById('chatbot-popup').style.display = 'none';
+        });
+        
+        // Fechar ao clicar fora do popup
+        popupContainer.addEventListener('click', function(e) {
+            if (e.target === popupContainer) {
+                popupContainer.style.display = 'none';
+            }
         });
     }
 });
@@ -123,21 +260,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.cta-button');
     
     buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const x = e.clientX - e.target.getBoundingClientRect().left;
-            const y = e.clientY - e.target.getBoundingClientRect().top;
-            
-            const ripple = document.createElement('span');
-            ripple.classList.add('ripple');
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-            
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
+        // Se não for o botão de WhatsApp, aplicar normalmente
+        if (button.id !== 'whatsapp-button') {
+            button.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        } else {
+            // Para o botão de WhatsApp, adicionar o efeito ripple mas prevenir comportamento padrão
+            button.addEventListener('click', function(e) {
+                // Prevenir qualquer ação padrão
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Adicionar efeito ripple
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+                
+                // Mostrar o popup do chatbot
+                const chatbotPopup = document.getElementById('chatbot-popup');
+                if (chatbotPopup) {
+                    chatbotPopup.style.display = 'flex';
+                }
+            });
+        }
     });
     
     // Rolagem suave para links de navegação
