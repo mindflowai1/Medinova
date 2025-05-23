@@ -1,21 +1,14 @@
 name = "medinova-landing-page"
-main = "index.html"
 compatibility_date = "2023-05-23"
+main = "worker.js"
 
 [site]
 bucket = "./"
-include = ["*.html", "*.css", "*.js", "img/**/*"]
-exclude = ["node_modules/**/*", ".git/**/*"]
+include = ["*.html", "*.css", "*.js", "*.webp", "*.jpg", "*.png", "img/**/*"]
+exclude = ["node_modules/**/*", ".git/**/*", "worker.js", "wrangler.toml"]
 
 [env.production]
 workers_dev = false
 # Substitua pelo seu domínio personalizado quando estiver pronto
 # route = "medinova.com.br/*"
 # zone_id = "seu-zone-id"
-
-[build]
-command = ""
-
-# Configuração opcional para conteúdo estático
-[site.static]
-handler = "static"
