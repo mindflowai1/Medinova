@@ -1,9 +1,0 @@
-# Regras de SPA
-/tratamentos/* /index.html 200
-/contato/* /index.html 200
-/sobre/* /index.html 200
-/antes-depois/* /index.html 200
-/depoimentos/* /index.html 200
-
-# Evita redirects em arquivos existentes
-/* /index.html 200!

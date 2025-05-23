@@ -1,7 +1,21 @@
-name = "medinova"
-compatibility_date = "2025-05-23"
-main = ".cloudflare/workers/sites.js"
+name = "medinova-landing-page"
+main = "index.html"
+compatibility_date = "2023-05-23"
 
-# Configuração de assets do CloudFlare Pages
 [site]
 bucket = "./"
+include = ["*.html", "*.css", "*.js", "img/**/*"]
+exclude = ["node_modules/**/*", ".git/**/*"]
+
+[env.production]
+workers_dev = false
+# Substitua pelo seu domínio personalizado quando estiver pronto
+# route = "medinova.com.br/*"
+# zone_id = "seu-zone-id"
+
+[build]
+command = ""
+
+# Configuração opcional para conteúdo estático
+[site.static]
+handler = "static"
