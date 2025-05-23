@@ -4,7 +4,8 @@
   "description": "Landing page para clínica de estética Medinova",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "wrangler deploy"
   },
   "keywords": [
     "landing-page",
@@ -13,5 +14,8 @@
     "medinova"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.3.0"
+  }
 }
