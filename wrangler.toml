@@ -1,4 +1,4 @@
-name = "medinova-landing-page"
+name = "medinova"
 compatibility_date = "2023-05-23"
 main = "worker.js"
 
