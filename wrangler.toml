@@ -2,5 +2,12 @@ name = "medinova"
 compatibility_date = "2025-05-23"
 main = "workers-site/index.js"
 
-[site]
-bucket = "./"
+# Configuração usando assets em vez de site
+[assets]
+basePath = "/"
+
+# Define o diretório que contém os assets estáticos
+[build]
+upload.format = "directory"
+upload.dir = "./"
+watch_dir = "./"
