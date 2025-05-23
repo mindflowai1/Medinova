@@ -1,0 +1,17 @@
+{
+  "name": "medinova-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page para clínica de estética Medinova",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "landing-page",
+    "estetica",
+    "beleza",
+    "medinova"
+  ],
+  "author": "",
+  "license": "MIT"
+}
