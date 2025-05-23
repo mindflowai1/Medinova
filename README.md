@@ -45,6 +45,27 @@ git clone https://github.com/seu-usuario/medinova-landing-page.git
 
 2. Abra o arquivo `index.html` em seu navegador preferido.
 
+## Deploy no Cloudflare Pages
+
+Este projeto está configurado para ser facilmente implantado no Cloudflare Pages:
+
+1. Crie uma conta no [Cloudflare](https://dash.cloudflare.com/)
+2. No painel do Cloudflare, vá para **Pages** > **Create a project** > **Connect to Git**
+3. Conecte sua conta GitHub/GitLab e selecione este repositório
+4. Configure as opções de build:
+   - **Framework preset**: None / Static Site
+   - **Build command**: Deixe em branco (não é necessário)
+   - **Build output directory**: / (raiz)
+   - **Environment variables**: Não é necessário definir nenhuma
+
+5. Clique em **Save and Deploy**
+6. Após o deploy, você receberá uma URL no formato `https://seu-projeto.pages.dev`
+
+Os arquivos de configuração já estão incluídos:
+- `_headers`: Define cabeçalhos HTTP para segurança e cache
+- `_redirects`: Configura redirecionamentos, útil para SPA
+- `netlify.toml`: Compatível com Cloudflare Pages para processamento de ativos
+
 ## Personalização
 
 - Todas as cores do site podem ser facilmente alteradas através das variáveis CSS no arquivo `styles.css`
