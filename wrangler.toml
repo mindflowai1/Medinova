@@ -1,13 +1,7 @@
 name = "medinova"
 compatibility_date = "2025-05-23"
-main = "workers-site/index.js"
+main = ".cloudflare/workers/sites.js"
 
-# Configuração usando assets em vez de site
-[assets]
-basePath = "/"
-
-# Define o diretório que contém os assets estáticos
-[build]
-upload.format = "directory"
-upload.dir = "./"
-watch_dir = "./"
+# Configuração de assets do CloudFlare Pages
+[site]
+bucket = "./"
